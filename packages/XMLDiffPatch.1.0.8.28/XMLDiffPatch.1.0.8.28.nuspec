@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>XMLDiffPatch</id>
+    <version>1.0.8.28</version>
+    <title>XMLDiffPatch</title>
+    <authors>Microsoft Corporation</authors>
+    <owners>Microsoft Corporation</owners>
+    <projectUrl>http://msdn.microsoft.com/en-us/library/aa302294</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Generates difference files based on the comparison of two XML documents.</description>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <references>
+      <reference file="XmlDiffPatch.dll" />
+      <reference file="XmlDiffPatch.View.dll" />
+    </references>
+  </metadata>
+</package>
