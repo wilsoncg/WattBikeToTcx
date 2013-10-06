@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlGenerator", "XmlGenerator\XmlGenerator.csproj", "{B6484F37-3A6A-4EB3-835C-69B9CD288ACA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{2B46F0DE-BA82-49A0-A0E9-EEC315DEBB8A}"
@@ -14,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlGenerator.UnitTests", "XmlGenerator.UnitTests\XmlGenerator.UnitTests.csproj", "{46743DA9-2991-4255-9E2F-42B23DD44C85}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{F78BA815-A13E-4E1D-93E1-868A9027810B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{7036DFF4-C33B-40CE-8B89-AF6997DAA778}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,10 @@ Global
 		{F78BA815-A13E-4E1D-93E1-868A9027810B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F78BA815-A13E-4E1D-93E1-868A9027810B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F78BA815-A13E-4E1D-93E1-868A9027810B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7036DFF4-C33B-40CE-8B89-AF6997DAA778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7036DFF4-C33B-40CE-8B89-AF6997DAA778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7036DFF4-C33B-40CE-8B89-AF6997DAA778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7036DFF4-C33B-40CE-8B89-AF6997DAA778}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
