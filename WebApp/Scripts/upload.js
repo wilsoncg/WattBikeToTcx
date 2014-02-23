@@ -1,32 +1,7 @@
-﻿/*jslint unparam: true */
-/*global window, $ */
-/*basic ui*/
-/*$(function () {
+﻿$(function() {
     'use strict';
     // Change this to the location of your server-side upload handler:
-    var url = '/WattBikeToTcx/Upload/Convert';
-    $('#fileupload').fileupload({
-        url: url,
-        dataType: 'json',
-        done: function (e, data) {
-            $.each(data.result.files, function (index, file) {
-                $('<p/>').text(file.name).appendTo('#files');
-            });
-        },
-        progressall: function (e, data) {
-            var progress = parseInt(data.loaded / data.total * 100, 10);
-            $('#progress .ui-progressbar').css(
-                'width',
-                progress + '%'
-            );
-        }
-    }).prop('disabled', !$.support.fileInput)
-        .parent().addClass($.support.fileInput ? undefined : 'disabled');
-});*/
-$(function() {
-    'use strict';
-    // Change this to the location of your server-side upload handler:
-    var url = '/WattBikeToTcx/Upload/Convert',
+    var url = pathToUpload,
         uploadButton = $('<button/>')
             .addClass('btn btn-primary')
             .prop('disabled', true)
@@ -49,7 +24,7 @@ $(function() {
         url: url,
         dataType: 'json',
         autoUpload: false,
-        acceptFileTypes: /(\.|\/)(dat|tcx)$/i,
+        acceptFileTypes: /(\.|\/)(dat)$/i,
         maxFileSize: 5000000, // 5 MB
         // Enable image resizing, except for Android and Opera,
         // which actually support image resizing, but fail to

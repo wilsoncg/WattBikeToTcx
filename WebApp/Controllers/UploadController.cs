@@ -5,18 +5,28 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 
 namespace WebApp.Controllers
 {
     public class UploadController : Controller
     {
-        [HttpGet]
         public ActionResult Index()
         {
             ViewBag.Message = "Select files to upload...";
 
             return View();
+        }
+
+        public FileContentResult File(string id)
+        {
+            var path = Server.MapPath(string.Format("~/Uploads/{0}", id));
+            if (!System.IO.File.Exists(path))
+                return null;
+
+            var contents = System.IO.File.ReadAllBytes(path);
+            return new FileContentResult(contents, "text/plain");
         }
 
         [HttpPost]
@@ -43,19 +53,21 @@ namespace WebApp.Controllers
            for (int i = 0; i < request.Files.Count; i++)
            {
                var file = request.Files[i];
-               var storageRoot = Path.Combine(Server.MapPath("~/App_Data"));
-               var fullPath = Path.Combine(storageRoot, Path.GetFileName(file.FileName));
+               var storageRoot = Path.Combine(Server.MapPath("~/Uploads"));
+               var fileName = file.FileName;
+               var fullPath = Path.Combine(storageRoot, Path.GetFileName(fileName));
 
                file.SaveAs(fullPath);
 
-               statuses.files.Add(new File
+               //var encodedFileName = Server.UrlEncode(fileName);
+               statuses.files.Add(new UploadedFile
                {
-                   name = file.FileName,
+                   name = fileName,
                    size = file.ContentLength,
                    type = file.ContentType,
-                   url = "/Home/Download/" + file.FileName,
-                   deleteUrl = "/Home/Delete/" + file.FileName,
-                   deleteType = "GET",
+                   url = Url.Action("File","Upload") + "/?id=" + fileName,
+                   deleteUrl = Url.Action("File", "Upload") + "/?id=" + fileName,
+                   deleteType = "DELETE",
                });
            }
        }
@@ -63,17 +75,17 @@ namespace WebApp.Controllers
 
     public class ViewDataUploadFilesResult
     {
-        private List<File> _files;
-        public List<File> files { get { return _files; } set { _files = value; } }
+        private List<UploadedFile> _files;
+        public List<UploadedFile> files { get { return _files; } set { _files = value; } }
 
         public ViewDataUploadFilesResult()
         {
             if (_files == null)
-                _files = new List<File>();
+                _files = new List<UploadedFile>();
         }
     }
 
-    public class File
+    public class UploadedFile
     {
         public string name { get; set; }
         public int size { get; set; }
