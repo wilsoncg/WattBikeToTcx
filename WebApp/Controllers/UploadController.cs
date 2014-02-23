@@ -21,7 +21,7 @@ namespace WebApp.Controllers
 
         public FileContentResult File(string id)
         {
-            var path = Server.MapPath(string.Format("~/Uploads/{0}", id));
+            var path = Server.MapPath(string.Format("~/App_Data/{0}", id));
             if (!System.IO.File.Exists(path))
                 return null;
 
@@ -53,7 +53,7 @@ namespace WebApp.Controllers
            for (int i = 0; i < request.Files.Count; i++)
            {
                var file = request.Files[i];
-               var storageRoot = Path.Combine(Server.MapPath("~/Uploads"));
+               var storageRoot = Path.Combine(Server.MapPath("~/App_Data"));//Path.GetTempPath()
                var fileName = file.FileName;
                var fullPath = Path.Combine(storageRoot, Path.GetFileName(fileName));
 
