@@ -2,27 +2,32 @@
     ViewBag.Title = "Home Page";  
 }
 
-<div class="hero-unit">
-    <h1>Wattbike Converter</h1>
-    <p class="lead">Are you training with power? Convert your wattbike sessions to .tcx files and start analysing your results today!</p>
-    <p>@Html.ActionLink("Convert", "Convert", "Home", null, new { @class = "btn btn-primary btn-large" })</p>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Wattbike Converter</h1>
+        <p class="lead">Are you training with power? Convert your wattbike sessions to .tcx files and start analysing your results today!</p>
+        <p>@Html.ActionLink("Convert", "Index", "Upload", null, new { @class = "btn btn-primary btn-lg" })</p>
+    </div>
 </div>
-<div class="row">
-    <div class="span4">
-        <h2>1. Export .dat files</h2>
-        <p>Export your wattbike session information using the WattBike Expert software...</p>
-        <p>
-            @Html.ActionLink("Learn more", "Export", "Home", null, new { @class = "btn" })
-        </p>
-    </div>
-    <div class="span4">
-        <h2>2. Convert to .tcx</h2>
-        <p>Select one or more files for converting...</p>
-        <p>@Html.ActionLink("Learn more", "Convert", "Home", null, new { @class = "btn" })</p>
-    </div>
-    <div class="span4">
-        <h2>3. Upload to Garmin Connect</h2>
-        <p>Login to Garmin Connect and upload your session...</p>
-        <p>@Html.ActionLink("Learn more", "Upload", "Home", null, new { @class = "btn" })</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>1. Export .dat files</h2>
+            <p>Export your wattbike session information using the WattBike Expert software...</p>
+            <p>
+                @Html.ActionLink("Learn more", "Export", "Home", null, new { @class = "btn btn-default" })
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>2. Convert to .tcx</h2>
+            <p>Select one or more files for converting...</p>
+            <p>@Html.ActionLink("Learn more", "Index", "Upload", null, new { @class = "btn btn-default" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>3. Upload to Garmin Connect</h2>
+            <p>Login to Garmin Connect and upload your session...</p>
+            <p>@Html.ActionLink("Learn more", "UploadToGarmin", "Home", null, new { @class = "btn btn-default" })</p>
+        </div>
     </div>
 </div>

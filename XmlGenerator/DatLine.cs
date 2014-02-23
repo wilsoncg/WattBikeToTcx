@@ -34,8 +34,8 @@ namespace XmlGenerator
         public int Power; //watts
         public int PowerPeak;
         public int PowerAverage;
-        public int WattsPerKg;
-        public int WattsPerKgAverage;
+        public decimal WattsPerKg;
+        public decimal WattsPerKgAverage;
         public int Calories; //cal
         public decimal CaloriesTotal; //kcal
         public int Work; //joules

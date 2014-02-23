@@ -20,24 +20,15 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public ActionResult Convert()
-        {
-            ViewBag.Message = "Convert page.";
-
-            return View();
-        }
-
         public ActionResult Export()
         {
-            ViewBag.Message = "Export page.";
+            ViewBag.Message = "How-to export your wattbike session as .dat file";
 
             return View();
         }
 
-        public ActionResult Upload()
+        public ActionResult UploadToGarmin()
         {
-            ViewBag.Message = "Upload page.";
-
             return View();
         }
     }

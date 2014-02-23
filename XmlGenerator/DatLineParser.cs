@@ -44,8 +44,8 @@ namespace XmlGenerator
             var power = int.Parse(line[(int) Line.Power]);
             var powerPeak = int.Parse(line[(int) Line.PowerPeak]);
             var powerAverage = int.Parse(line[(int) Line.PowerAverage]);
-            var wattsPerKg = int.Parse(line[(int) Line.WattsPerKg]);
-            var wattsPerKgAverage = int.Parse(line[(int) Line.WattsPerKgAverage]);
+            var wattsPerKg = decimal.Parse(line[(int) Line.WattsPerKg]);
+            var wattsPerKgAverage = decimal.Parse(line[(int) Line.WattsPerKgAverage]);
             var calories = int.Parse(line[(int) Line.Calories]);
             var caloriesTotal = decimal.Parse(line[(int) Line.CaloriesTotal]);
             var work = int.Parse(line[(int) Line.Work]);

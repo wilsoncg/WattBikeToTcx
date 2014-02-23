@@ -1,6 +1,10 @@
 ﻿body {
-    padding-top: 60px;
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.navbar-nav ul li a {
+    color: #2a6496;
 }
 
 /* styles for validation helpers */
@@ -32,4 +36,30 @@ input[type="checkbox"].input-validation-error {
 .no-color {
   background-color: white;
   border-style:none;
+}
+
+/* possibly put into seperate jquery.fileupload.css file */
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+}
+.fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+
+/* Fixes for IE < 8 */
+@media screen\9 {
+  .fileinput-button input {
+    filter: alpha(opacity=0);
+    font-size: 100%;
+    height: 100%;
+  }
 }

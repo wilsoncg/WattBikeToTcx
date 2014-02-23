@@ -33,14 +33,21 @@ namespace ConsoleApp
         {
             var filenames = new List<string>
                 {
-                    "..\\..\\..\\Files\\wattbike\\02102013_1910_interval1.dat",
-                    "..\\..\\..\\Files\\wattbike\\02102013_1910_interval2.dat",
-                    "..\\..\\..\\Files\\wattbike\\02102013_1910_interval3.dat",
-                    "..\\..\\..\\Files\\wattbike\\02102013_1910_interval4.dat",
+                    "C:\\Users\\Craig\\Documents\\wattbike\\12022014_1803_interval1.dat",
+                    "C:\\Users\\Craig\\Documents\\wattbike\\12022014_1803_interval2.dat",
+                    "C:\\Users\\Craig\\Documents\\wattbike\\12022014_1803_interval3.dat",
+                    "C:\\Users\\Craig\\Documents\\wattbike\\12022014_1803_interval4.dat",
+                    "C:\\Users\\Craig\\Documents\\wattbike\\12022014_1803_interval5.dat",
+                    "C:\\Users\\Craig\\Documents\\wattbike\\12022014_1803_interval6.dat",
+                    "C:\\Users\\Craig\\Documents\\wattbike\\12022014_1803_interval7.dat",
+                    "C:\\Users\\Craig\\Documents\\wattbike\\12022014_1803_interval8.dat",
+                    "C:\\Users\\Craig\\Documents\\wattbike\\12022014_1803_interval9.dat",
+                    "C:\\Users\\Craig\\Documents\\wattbike\\12022014_1803_interval10.dat",
                 };
-            var tcxFilename = @"..\..\..\Files\wattbike\02102013_1910.tcx";
 
-            var activityStartTime = new DateTime(2013, 10, 02, 19, 10, 0, DateTimeKind.Utc);
+            var activityStartTime = new DateTime(2014, 02, 12, 18, 03, 0, DateTimeKind.Utc);
+            var filename = activityStartTime.ToString("ddMMyy_HHmm");
+            var tcxFilename = string.Format("C:\\Users\\Craig\\Documents\\wattbike\\{0}.tcx", filename);
             var intervals = new IntervalsGenerator().CreateIntervalsWithCorrectStartTimes(filenames, activityStartTime);
             var trainingCenter = new TrainingCenterGenerator().Generate(intervals, activityStartTime);
             
